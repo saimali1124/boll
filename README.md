@@ -1,6 +1,6 @@
-# Bollywoodle 🎬
+# Moviedle 🎬
 
-A Wordle-inspired game where you guess Bollywood movies in 7 tries!
+A Wordle-inspired game where you guess movies in 7 tries!
 
 ## Features
 
