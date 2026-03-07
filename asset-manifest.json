@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/boll/static/css/main.af0d1da7.css",
+    "main.js": "/boll/static/js/main.38d30dcb.js",
+    "index.html": "/boll/index.html",
+    "main.af0d1da7.css.map": "/boll/static/css/main.af0d1da7.css.map",
+    "main.38d30dcb.js.map": "/boll/static/js/main.38d30dcb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af0d1da7.css",
+    "static/js/main.38d30dcb.js"
+  ]
+}
