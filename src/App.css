@@ -344,6 +344,51 @@
   }
 }
 
+.input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 480px) {
+  .input-row {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .input-row .movie-input {
+    flex: 1;
+  }
+}
+
+.give-up-btn {
+  padding: 12px 20px;
+  border: 2px solid #c82333;
+  background: #dc3545;
+  color: white;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.give-up-btn:hover:not(:disabled) {
+  background: #c82333;
+  border-color: #bd2130;
+}
+
+.give-up-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (min-width: 480px) {
+  .give-up-btn {
+    min-width: 100px;
+  }
+}
+
 .movie-input {
   width: 100%;
   padding: 14px 16px;
@@ -702,4 +747,72 @@
   background: #5568d3;
 }
 
+/* Give up confirmation modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-popup {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.modal-message {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.modal-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.modal-cancel {
+  background: #e9ecef;
+  color: #333;
+}
+
+.modal-cancel:hover {
+  background: #dee2e6;
+}
+
+.modal-confirm {
+  background: #dc3545;
+  color: white;
+}
+
+.modal-confirm:hover {
+  background: #c82333;
+}
 

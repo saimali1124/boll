@@ -16,6 +16,7 @@ function App() {
   const [gameMode, setGameMode] = useState('classic'); // 'classic' or 'emoji'
   const [revealedEmojis, setRevealedEmojis] = useState(1); // Start with 1 emoji revealed
   const [winMessages, setWinMessages] = useState({ noReward: '', reward: '' });
+  const [showGiveUpConfirm, setShowGiveUpConfirm] = useState(false);
   const inputRef = useRef(null);
   const suggestionsRef = useRef(null);
 
@@ -95,6 +96,20 @@ function App() {
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
+  };
+
+  const handleGiveUpClick = () => {
+    if (guesses.length >= 7 || gameWon || gameLost) return;
+    setShowGiveUpConfirm(true);
+  };
+
+  const confirmGiveUp = () => {
+    setGameLost(true);
+    setShowGiveUpConfirm(false);
+  };
+
+  const cancelGiveUp = () => {
+    setShowGiveUpConfirm(false);
   };
 
   const handleMovieSelect = (movie) => {
@@ -327,17 +342,28 @@ function App() {
         )}
 
         <div className="input-container">
-          <input
-            ref={inputRef}
-            type="text"
-            value={inputValue}
-            onChange={handleInputChange}
-            onKeyPress={handleKeyPress}
-            onFocus={() => setShowSuggestions(suggestions.length > 0)}
-            placeholder="Enter movie name..."
-            disabled={guesses.length >= 7 || gameWon || gameLost}
-            className="movie-input"
-          />
+          <div className="input-row">
+            <input
+              ref={inputRef}
+              type="text"
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
+              onFocus={() => setShowSuggestions(suggestions.length > 0)}
+              placeholder="Enter movie name..."
+              disabled={guesses.length >= 7 || gameWon || gameLost}
+              className="movie-input"
+            />
+            <button
+              type="button"
+              onClick={handleGiveUpClick}
+              disabled={guesses.length >= 7 || gameWon || gameLost}
+              className="give-up-btn"
+              title="Reveal the answer and end the game"
+            >
+              Give Up
+            </button>
+          </div>
           {showSuggestions && suggestions.length > 0 && (
             <div ref={suggestionsRef} className="suggestions">
               {suggestions.map((movie, index) => (
@@ -404,6 +430,23 @@ function App() {
         {guesses.length === 0 && (
           <div className="hint-box">
             <p>💡 Start guessing! Type a movie name to see suggestions.</p>
+          </div>
+        )}
+
+        {showGiveUpConfirm && (
+          <div className="modal-overlay" onClick={cancelGiveUp}>
+            <div className="modal-popup" onClick={e => e.stopPropagation()}>
+              <p className="modal-title">Give up?</p>
+              <p className="modal-message">The answer will be revealed and the game will end.</p>
+              <div className="modal-actions">
+                <button type="button" onClick={cancelGiveUp} className="modal-btn modal-cancel">
+                  Cancel
+                </button>
+                <button type="button" onClick={confirmGiveUp} className="modal-btn modal-confirm">
+                  Give Up
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </div>

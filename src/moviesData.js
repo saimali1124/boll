@@ -271,6 +271,7 @@ export const bollywoodMovies = [
   { name: "Chup Chup Ke", year: 2006, genres: ["Comedy", "Drama"] },
   { name: "Ready", year: 2011, genres: ["Comedy", "Action"] },
   { name: "Laila Majnu", year: 2018, genres: ["Romance", "Drama"] },
+  { name: "Bhootnath", year: 2008, genres: ["Comedy", "Fantasy", "Family"] },
   { name: "Bhootnath Returns", year: 2014, genres: ["Comedy", "Fantasy", "Drama"] },
   { name: "Bhool Bhulaiyaa", year: 2007, genres: ["Horror", "Comedy", "Thriller"] },
   { name: "Humpty Sharma Ki Dulhania", year: 2014, genres: ["Romance", "Comedy", "Drama"] },
