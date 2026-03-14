@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/boll/static/css/main.9e32e8b4.css",
-    "main.js": "/boll/static/js/main.38d30dcb.js",
+    "main.js": "/boll/static/js/main.24617c61.js",
     "index.html": "/boll/index.html",
     "main.9e32e8b4.css.map": "/boll/static/css/main.9e32e8b4.css.map",
-    "main.38d30dcb.js.map": "/boll/static/js/main.38d30dcb.js.map"
+    "main.24617c61.js.map": "/boll/static/js/main.24617c61.js.map"
   },
   "entrypoints": [
     "static/css/main.9e32e8b4.css",
-    "static/js/main.38d30dcb.js"
+    "static/js/main.24617c61.js"
   ]
 }
