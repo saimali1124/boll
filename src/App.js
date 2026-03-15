@@ -30,7 +30,11 @@ function App() {
   const rewardMessages = [
     'Your joyland tickets are confirmed',
     'Salman Khan is proud of you',
-    'Shahrukh khan wants to meet you'
+    'Shahrukh khan wants to meet you',
+    'Aamir Khan has become your fan',
+    'Kareena Kapoor Khan is waiting for you outside',
+    'You deserve white pasta now',
+    'Limited edition crumble cookies have been saved for you',
   ];
 
   // Calculate min and max years from all movies (memoized)
@@ -301,6 +305,12 @@ function App() {
                     ))}
                   </div>
                 </div>
+              </div>
+            )}
+
+            {targetMovie && guesses.length >= 4 && !gameWon && !gameLost && (
+              <div className="title-length-hint">
+                <strong>Hint:</strong> Number of characters in title: <strong>{targetMovie.name.length}</strong>
               </div>
             )}
           </>
