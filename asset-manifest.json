@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/boll/static/css/main.12f0656a.css",
-    "main.js": "/boll/static/js/main.96a68eb0.js",
+    "main.css": "/boll/static/css/main.45688cba.css",
+    "main.js": "/boll/static/js/main.311d5c47.js",
     "index.html": "/boll/index.html",
-    "main.12f0656a.css.map": "/boll/static/css/main.12f0656a.css.map",
-    "main.96a68eb0.js.map": "/boll/static/js/main.96a68eb0.js.map"
+    "main.45688cba.css.map": "/boll/static/css/main.45688cba.css.map",
+    "main.311d5c47.js.map": "/boll/static/js/main.311d5c47.js.map"
   },
   "entrypoints": [
-    "static/css/main.12f0656a.css",
-    "static/js/main.96a68eb0.js"
+    "static/css/main.45688cba.css",
+    "static/js/main.311d5c47.js"
   ]
 }
